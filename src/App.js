@@ -15,7 +15,7 @@ function App() {
   const [text, settext] = useState('Enable Dark Mode')
   const togglemode =()=>{
     if(mode ==="light"){
-      setmode('dark')
+      setmode('dark') 
       document.body.style.backgroundColor = '#0c3570f5';
       settext('Enable Light Mode')
     }else{

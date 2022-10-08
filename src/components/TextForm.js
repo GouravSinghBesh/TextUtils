@@ -20,7 +20,7 @@ export default function TextForm(props) {
         settext(event.target.value);
         // console.log("onchange")
     }
-const [text, settext] = useState()
+const [text, settext] = useState('')
     return (
         <>
         <h2 style={{color : props.mode==="light"?'black':'white'}} >{props.heading}</h2>
@@ -33,9 +33,10 @@ const [text, settext] = useState()
         
         <div className="container" style={{color:props.mode==="light"?'black':'white'}}>
             <h2>Your Text Summary :</h2>
-            {/* <p>{text.split(" ").length} words and {text.length} characters</p> */}
+            <p>{text.length>0? text.split(" ").filter((element)=>{return element.length !==0}).length:"0 " } words and {text.length} characters</p>
             <h2>Preview</h2>
-            <p>{text}</p>
+            <p>{text.length>0
+            ?text:'Nothing to Preview'}</p>
 
 
         </div>
